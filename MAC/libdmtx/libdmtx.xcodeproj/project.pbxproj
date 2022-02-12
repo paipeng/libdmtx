@@ -12,6 +12,9 @@
 		73C2BC8427B7406800896E4F /* dmtx.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6C27B7406800896E4F /* dmtx.h */; };
 		73C2BC9127B7530500896E4F /* libdmtxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC9027B7530500896E4F /* libdmtxTests.m */; };
 		73C2BC9327B7530500896E4F /* liblibdmtx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C2BC5227B7401400896E4F /* liblibdmtx.dylib */; };
+		73C2BC9B27B779D200896E4F /* dmtxstatic.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6127B7406800896E4F /* dmtxstatic.h */; };
+		73C2BC9C27B779D200896E4F /* dmtx.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6C27B7406800896E4F /* dmtx.h */; };
+		73C2BC9E27B779D200896E4F /* dmtx.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6727B7406800896E4F /* dmtx.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libdmtxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C2BC9027B7530500896E4F /* libdmtxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libdmtxTests.m; sourceTree = "<group>"; };
 		73C2BC9227B7530500896E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73C2BCA327B779D200896E4F /* liblibdmtxstatic.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblibdmtxstatic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C2BC9327B7530500896E4F /* liblibdmtx.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C2BC9F27B779D200896E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +99,7 @@
 			children = (
 				73C2BC5227B7401400896E4F /* liblibdmtx.dylib */,
 				73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */,
+				73C2BCA327B779D200896E4F /* liblibdmtxstatic.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +156,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73C2BC9A27B779D200896E4F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC9B27B779D200896E4F /* dmtxstatic.h in Headers */,
+				73C2BC9C27B779D200896E4F /* dmtx.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +203,23 @@
 			productReference = 73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		73C2BC9927B779D200896E4F /* libdmtxstatic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C2BCA027B779D200896E4F /* Build configuration list for PBXNativeTarget "libdmtxstatic" */;
+			buildPhases = (
+				73C2BC9A27B779D200896E4F /* Headers */,
+				73C2BC9D27B779D200896E4F /* Sources */,
+				73C2BC9F27B779D200896E4F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libdmtxstatic;
+			productName = libdmtx;
+			productReference = 73C2BCA327B779D200896E4F /* liblibdmtxstatic.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,6 +251,7 @@
 			targets = (
 				73C2BC5127B7401400896E4F /* libdmtx */,
 				73C2BC8D27B7530500896E4F /* libdmtxTests */,
+				73C2BC9927B779D200896E4F /* libdmtxstatic */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C2BC9127B7530500896E4F /* libdmtxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C2BC9D27B779D200896E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC9E27B779D200896E4F /* dmtx.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +483,42 @@
 			};
 			name = Release;
 		};
+		73C2BCA127B779D200896E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Debug;
+		};
+		73C2BCA227B779D200896E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -462,6 +545,15 @@
 			buildConfigurations = (
 				73C2BC9727B7530500896E4F /* Debug */,
 				73C2BC9827B7530500896E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C2BCA027B779D200896E4F /* Build configuration list for PBXNativeTarget "libdmtxstatic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C2BCA127B779D200896E4F /* Debug */,
+				73C2BCA227B779D200896E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
