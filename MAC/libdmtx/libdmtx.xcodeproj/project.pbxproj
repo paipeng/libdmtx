@@ -10,7 +10,19 @@
 		73C2BC7927B7406800896E4F /* dmtxstatic.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6127B7406800896E4F /* dmtxstatic.h */; };
 		73C2BC7F27B7406800896E4F /* dmtx.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6727B7406800896E4F /* dmtx.c */; };
 		73C2BC8427B7406800896E4F /* dmtx.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6C27B7406800896E4F /* dmtx.h */; };
+		73C2BC9127B7530500896E4F /* libdmtxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC9027B7530500896E4F /* libdmtxTests.m */; };
+		73C2BC9327B7530500896E4F /* liblibdmtx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C2BC5227B7401400896E4F /* liblibdmtx.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73C2BC9427B7530500896E4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73C2BC4A27B7401400896E4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73C2BC5127B7401400896E4F;
+			remoteInfo = libdmtx;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		73C2BC5227B7401400896E4F /* liblibdmtx.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblibdmtx.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +50,9 @@
 		73C2BC6F27B7406800896E4F /* dmtxencodescheme.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodescheme.c; path = ../../../dmtxencodescheme.c; sourceTree = "<group>"; };
 		73C2BC7027B7406800896E4F /* dmtxdecode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxdecode.c; path = ../../../dmtxdecode.c; sourceTree = "<group>"; };
 		73C2BC7127B7406800896E4F /* dmtxsymbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxsymbol.c; path = ../../../dmtxsymbol.c; sourceTree = "<group>"; };
+		73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = libdmtxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C2BC9027B7530500896E4F /* libdmtxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libdmtxTests.m; sourceTree = "<group>"; };
+		73C2BC9227B7530500896E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73C2BC8B27B7530500896E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC9327B7530500896E4F /* liblibdmtx.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				73C2BC5927B7405200896E4F /* src */,
+				73C2BC8F27B7530500896E4F /* libdmtxTests */,
 				73C2BC5327B7401400896E4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				73C2BC5227B7401400896E4F /* liblibdmtx.dylib */,
+				73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +123,15 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		73C2BC8F27B7530500896E4F /* libdmtxTests */ = {
+			isa = PBXGroup;
+			children = (
+				73C2BC9027B7530500896E4F /* libdmtxTests.m */,
+				73C2BC9227B7530500896E4F /* Info.plist */,
+			);
+			path = libdmtxTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -130,6 +164,24 @@
 			productReference = 73C2BC5227B7401400896E4F /* liblibdmtx.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		73C2BC8D27B7530500896E4F /* libdmtxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C2BC9627B7530500896E4F /* Build configuration list for PBXNativeTarget "libdmtxTests" */;
+			buildPhases = (
+				73C2BC8A27B7530500896E4F /* Sources */,
+				73C2BC8B27B7530500896E4F /* Frameworks */,
+				73C2BC8C27B7530500896E4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73C2BC9527B7530500896E4F /* PBXTargetDependency */,
+			);
+			name = libdmtxTests;
+			productName = libdmtxTests;
+			productReference = 73C2BC8E27B7530500896E4F /* libdmtxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -139,6 +191,9 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					73C2BC5127B7401400896E4F = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					73C2BC8D27B7530500896E4F = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -157,9 +212,20 @@
 			projectRoot = "";
 			targets = (
 				73C2BC5127B7401400896E4F /* libdmtx */,
+				73C2BC8D27B7530500896E4F /* libdmtxTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73C2BC8C27B7530500896E4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73C2BC4F27B7401400896E4F /* Sources */ = {
@@ -170,7 +236,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73C2BC8A27B7530500896E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC9127B7530500896E4F /* libdmtxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73C2BC9527B7530500896E4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73C2BC5127B7401400896E4F /* libdmtx */;
+			targetProxy = 73C2BC9427B7530500896E4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		73C2BC5427B7401400896E4F /* Debug */ = {
@@ -316,6 +398,44 @@
 			};
 			name = Release;
 		};
+		73C2BC9727B7530500896E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = libdmtxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paipeng.libdmtxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Debug;
+		};
+		73C2BC9827B7530500896E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = libdmtxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paipeng.libdmtxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -333,6 +453,15 @@
 			buildConfigurations = (
 				73C2BC5727B7401400896E4F /* Debug */,
 				73C2BC5827B7401400896E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C2BC9627B7530500896E4F /* Build configuration list for PBXNativeTarget "libdmtxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C2BC9727B7530500896E4F /* Debug */,
+				73C2BC9827B7530500896E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
