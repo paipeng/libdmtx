@@ -93,8 +93,8 @@ dmtxTimeNow(void)
    DmtxTime tNow;
 
    s = time(NULL);
-   if(errno != 0)
-      ; /* XXX handle error better here */
+   //if(errno != 0)
+   //   ; /* XXX handle error better here */
 
    tNow.sec = s;
    tNow.usec = 0;
