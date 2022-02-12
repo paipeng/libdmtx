@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		73C2BC7227B7406800896E4F /* dmtximage.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5A27B7406800896E4F /* dmtximage.c */; };
+		73C2BC7327B7406800896E4F /* dmtxencodeascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5B27B7406800896E4F /* dmtxencodeascii.c */; };
+		73C2BC7427B7406800896E4F /* dmtxreedsol.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5C27B7406800896E4F /* dmtxreedsol.c */; };
+		73C2BC7527B7406800896E4F /* dmtxmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5D27B7406800896E4F /* dmtxmessage.c */; };
+		73C2BC7627B7406800896E4F /* dmtxbytelist.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5E27B7406800896E4F /* dmtxbytelist.c */; };
+		73C2BC7727B7406800896E4F /* dmtxplacemod.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5F27B7406800896E4F /* dmtxplacemod.c */; };
+		73C2BC7827B7406800896E4F /* dmtxscangrid.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6027B7406800896E4F /* dmtxscangrid.c */; };
+		73C2BC7927B7406800896E4F /* dmtxstatic.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6127B7406800896E4F /* dmtxstatic.h */; };
+		73C2BC7A27B7406800896E4F /* dmtxencodec40textx12.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6227B7406800896E4F /* dmtxencodec40textx12.c */; };
+		73C2BC7B27B7406800896E4F /* dmtxregion.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6327B7406800896E4F /* dmtxregion.c */; };
+		73C2BC7C27B7406800896E4F /* dmtxtime.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6427B7406800896E4F /* dmtxtime.c */; };
+		73C2BC7D27B7406800896E4F /* dmtxdecodescheme.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6527B7406800896E4F /* dmtxdecodescheme.c */; };
+		73C2BC7E27B7406800896E4F /* dmtxmatrix3.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6627B7406800896E4F /* dmtxmatrix3.c */; };
+		73C2BC7F27B7406800896E4F /* dmtx.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6727B7406800896E4F /* dmtx.c */; };
+		73C2BC8027B7406800896E4F /* dmtxencodebase256.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6827B7406800896E4F /* dmtxencodebase256.c */; };
+		73C2BC8127B7406800896E4F /* dmtxencodeoptimize.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6927B7406800896E4F /* dmtxencodeoptimize.c */; };
+		73C2BC8227B7406800896E4F /* dmtxencodeedifact.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6A27B7406800896E4F /* dmtxencodeedifact.c */; };
+		73C2BC8327B7406800896E4F /* dmtxencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6B27B7406800896E4F /* dmtxencode.c */; };
+		73C2BC8427B7406800896E4F /* dmtx.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6C27B7406800896E4F /* dmtx.h */; };
+		73C2BC8527B7406800896E4F /* dmtxencodestream.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6D27B7406800896E4F /* dmtxencodestream.c */; };
+		73C2BC8627B7406800896E4F /* dmtxvector2.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6E27B7406800896E4F /* dmtxvector2.c */; };
+		73C2BC8727B7406800896E4F /* dmtxencodescheme.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6F27B7406800896E4F /* dmtxencodescheme.c */; };
+		73C2BC8827B7406800896E4F /* dmtxdecode.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC7027B7406800896E4F /* dmtxdecode.c */; };
+		73C2BC8927B7406800896E4F /* dmtxsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC7127B7406800896E4F /* dmtxsymbol.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		73C2BC5227B7401400896E4F /* liblibdmtx.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblibdmtx.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C2BC5A27B7406800896E4F /* dmtximage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtximage.c; path = ../../../dmtximage.c; sourceTree = "<group>"; };
+		73C2BC5B27B7406800896E4F /* dmtxencodeascii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodeascii.c; path = ../../../dmtxencodeascii.c; sourceTree = "<group>"; };
+		73C2BC5C27B7406800896E4F /* dmtxreedsol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxreedsol.c; path = ../../../dmtxreedsol.c; sourceTree = "<group>"; };
+		73C2BC5D27B7406800896E4F /* dmtxmessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxmessage.c; path = ../../../dmtxmessage.c; sourceTree = "<group>"; };
+		73C2BC5E27B7406800896E4F /* dmtxbytelist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxbytelist.c; path = ../../../dmtxbytelist.c; sourceTree = "<group>"; };
+		73C2BC5F27B7406800896E4F /* dmtxplacemod.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxplacemod.c; path = ../../../dmtxplacemod.c; sourceTree = "<group>"; };
+		73C2BC6027B7406800896E4F /* dmtxscangrid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxscangrid.c; path = ../../../dmtxscangrid.c; sourceTree = "<group>"; };
+		73C2BC6127B7406800896E4F /* dmtxstatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmtxstatic.h; path = ../../../dmtxstatic.h; sourceTree = "<group>"; };
+		73C2BC6227B7406800896E4F /* dmtxencodec40textx12.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodec40textx12.c; path = ../../../dmtxencodec40textx12.c; sourceTree = "<group>"; };
+		73C2BC6327B7406800896E4F /* dmtxregion.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxregion.c; path = ../../../dmtxregion.c; sourceTree = "<group>"; };
+		73C2BC6427B7406800896E4F /* dmtxtime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxtime.c; path = ../../../dmtxtime.c; sourceTree = "<group>"; };
+		73C2BC6527B7406800896E4F /* dmtxdecodescheme.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxdecodescheme.c; path = ../../../dmtxdecodescheme.c; sourceTree = "<group>"; };
+		73C2BC6627B7406800896E4F /* dmtxmatrix3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxmatrix3.c; path = ../../../dmtxmatrix3.c; sourceTree = "<group>"; };
+		73C2BC6727B7406800896E4F /* dmtx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtx.c; path = ../../../dmtx.c; sourceTree = "<group>"; };
+		73C2BC6827B7406800896E4F /* dmtxencodebase256.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodebase256.c; path = ../../../dmtxencodebase256.c; sourceTree = "<group>"; };
+		73C2BC6927B7406800896E4F /* dmtxencodeoptimize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodeoptimize.c; path = ../../../dmtxencodeoptimize.c; sourceTree = "<group>"; };
+		73C2BC6A27B7406800896E4F /* dmtxencodeedifact.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodeedifact.c; path = ../../../dmtxencodeedifact.c; sourceTree = "<group>"; };
+		73C2BC6B27B7406800896E4F /* dmtxencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencode.c; path = ../../../dmtxencode.c; sourceTree = "<group>"; };
+		73C2BC6C27B7406800896E4F /* dmtx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dmtx.h; path = ../../../dmtx.h; sourceTree = "<group>"; };
+		73C2BC6D27B7406800896E4F /* dmtxencodestream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodestream.c; path = ../../../dmtxencodestream.c; sourceTree = "<group>"; };
+		73C2BC6E27B7406800896E4F /* dmtxvector2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxvector2.c; path = ../../../dmtxvector2.c; sourceTree = "<group>"; };
+		73C2BC6F27B7406800896E4F /* dmtxencodescheme.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxencodescheme.c; path = ../../../dmtxencodescheme.c; sourceTree = "<group>"; };
+		73C2BC7027B7406800896E4F /* dmtxdecode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxdecode.c; path = ../../../dmtxdecode.c; sourceTree = "<group>"; };
+		73C2BC7127B7406800896E4F /* dmtxsymbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dmtxsymbol.c; path = ../../../dmtxsymbol.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73C2BC5027B7401400896E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73C2BC4927B7401400896E4F = {
+			isa = PBXGroup;
+			children = (
+				73C2BC5927B7405200896E4F /* src */,
+				73C2BC5327B7401400896E4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73C2BC5327B7401400896E4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73C2BC5227B7401400896E4F /* liblibdmtx.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73C2BC5927B7405200896E4F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				73C2BC6727B7406800896E4F /* dmtx.c */,
+				73C2BC6C27B7406800896E4F /* dmtx.h */,
+				73C2BC5E27B7406800896E4F /* dmtxbytelist.c */,
+				73C2BC7027B7406800896E4F /* dmtxdecode.c */,
+				73C2BC6527B7406800896E4F /* dmtxdecodescheme.c */,
+				73C2BC6B27B7406800896E4F /* dmtxencode.c */,
+				73C2BC5B27B7406800896E4F /* dmtxencodeascii.c */,
+				73C2BC6827B7406800896E4F /* dmtxencodebase256.c */,
+				73C2BC6227B7406800896E4F /* dmtxencodec40textx12.c */,
+				73C2BC6A27B7406800896E4F /* dmtxencodeedifact.c */,
+				73C2BC6927B7406800896E4F /* dmtxencodeoptimize.c */,
+				73C2BC6F27B7406800896E4F /* dmtxencodescheme.c */,
+				73C2BC6D27B7406800896E4F /* dmtxencodestream.c */,
+				73C2BC5A27B7406800896E4F /* dmtximage.c */,
+				73C2BC6627B7406800896E4F /* dmtxmatrix3.c */,
+				73C2BC5D27B7406800896E4F /* dmtxmessage.c */,
+				73C2BC5F27B7406800896E4F /* dmtxplacemod.c */,
+				73C2BC5C27B7406800896E4F /* dmtxreedsol.c */,
+				73C2BC6327B7406800896E4F /* dmtxregion.c */,
+				73C2BC6027B7406800896E4F /* dmtxscangrid.c */,
+				73C2BC6127B7406800896E4F /* dmtxstatic.h */,
+				73C2BC7127B7406800896E4F /* dmtxsymbol.c */,
+				73C2BC6427B7406800896E4F /* dmtxtime.c */,
+				73C2BC6E27B7406800896E4F /* dmtxvector2.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		73C2BC4E27B7401400896E4F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC7927B7406800896E4F /* dmtxstatic.h in Headers */,
+				73C2BC8427B7406800896E4F /* dmtx.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		73C2BC5127B7401400896E4F /* libdmtx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C2BC5627B7401400896E4F /* Build configuration list for PBXNativeTarget "libdmtx" */;
+			buildPhases = (
+				73C2BC4E27B7401400896E4F /* Headers */,
+				73C2BC4F27B7401400896E4F /* Sources */,
+				73C2BC5027B7401400896E4F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libdmtx;
+			productName = libdmtx;
+			productReference = 73C2BC5227B7401400896E4F /* liblibdmtx.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73C2BC4A27B7401400896E4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					73C2BC5127B7401400896E4F = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 73C2BC4D27B7401400896E4F /* Build configuration list for PBXProject "libdmtx" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 73C2BC4927B7401400896E4F;
+			productRefGroup = 73C2BC5327B7401400896E4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73C2BC5127B7401400896E4F /* libdmtx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73C2BC4F27B7401400896E4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C2BC7F27B7406800896E4F /* dmtx.c in Sources */,
+				73C2BC7527B7406800896E4F /* dmtxmessage.c in Sources */,
+				73C2BC7C27B7406800896E4F /* dmtxtime.c in Sources */,
+				73C2BC8827B7406800896E4F /* dmtxdecode.c in Sources */,
+				73C2BC7B27B7406800896E4F /* dmtxregion.c in Sources */,
+				73C2BC7A27B7406800896E4F /* dmtxencodec40textx12.c in Sources */,
+				73C2BC7727B7406800896E4F /* dmtxplacemod.c in Sources */,
+				73C2BC7627B7406800896E4F /* dmtxbytelist.c in Sources */,
+				73C2BC8727B7406800896E4F /* dmtxencodescheme.c in Sources */,
+				73C2BC8027B7406800896E4F /* dmtxencodebase256.c in Sources */,
+				73C2BC8127B7406800896E4F /* dmtxencodeoptimize.c in Sources */,
+				73C2BC7327B7406800896E4F /* dmtxencodeascii.c in Sources */,
+				73C2BC8927B7406800896E4F /* dmtxsymbol.c in Sources */,
+				73C2BC7E27B7406800896E4F /* dmtxmatrix3.c in Sources */,
+				73C2BC7227B7406800896E4F /* dmtximage.c in Sources */,
+				73C2BC8527B7406800896E4F /* dmtxencodestream.c in Sources */,
+				73C2BC7427B7406800896E4F /* dmtxreedsol.c in Sources */,
+				73C2BC7D27B7406800896E4F /* dmtxdecodescheme.c in Sources */,
+				73C2BC7827B7406800896E4F /* dmtxscangrid.c in Sources */,
+				73C2BC8227B7406800896E4F /* dmtxencodeedifact.c in Sources */,
+				73C2BC8627B7406800896E4F /* dmtxvector2.c in Sources */,
+				73C2BC8327B7406800896E4F /* dmtxencode.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		73C2BC5427B7401400896E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		73C2BC5527B7401400896E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		73C2BC5727B7401400896E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Debug;
+		};
+		73C2BC5827B7401400896E4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../..\"";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73C2BC4D27B7401400896E4F /* Build configuration list for PBXProject "libdmtx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C2BC5427B7401400896E4F /* Debug */,
+				73C2BC5527B7401400896E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C2BC5627B7401400896E4F /* Build configuration list for PBXNativeTarget "libdmtx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C2BC5727B7401400896E4F /* Debug */,
+				73C2BC5827B7401400896E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73C2BC4A27B7401400896E4F /* Project object */;
+}
