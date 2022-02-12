@@ -13,11 +13,7 @@
  * \file dmtxencodeascii.c
  * \brief ASCII encoding rules
  */
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
+
 /**
  * Simple single scheme encoding uses "Normal"
  * The optimizer needs to track "Expanded" and "Compact" streams separately, so they

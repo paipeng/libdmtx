@@ -14,14 +14,6 @@
  * \brief 2D Matrix (3x3) math
  */
 
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
-#include <stdio.h>
-#include <math.h>
-#include <float.h>
 /**
  * \brief  Copy matrix contents
  * \param  m0 Copy target

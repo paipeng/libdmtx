@@ -16,11 +16,6 @@
 
 #define DMTX_USEC_PER_SEC 1000000
 
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <string.h>
-
 #if defined(HAVE_SYS_TIME_H) && defined(HAVE_GETTIMEOFDAY)
 
 #include <sys/time.h>

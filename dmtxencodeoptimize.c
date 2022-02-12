@@ -15,11 +15,7 @@
  */
 
 #define DUMPSTREAMS 0
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
+
 enum SchemeState {
    AsciiFull,
    AsciiCompactOffset0, /* 0 offset from first regular input value */

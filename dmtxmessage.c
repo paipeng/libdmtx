@@ -20,11 +20,6 @@
  * \param  symbolFormat DmtxFormatMatrix | DmtxFormatMosaic
  * \return Address of allocated memory
  */
-#include <stdlib.h>
-#include <stdio.h>
-#include <assert.h>
-#include "dmtx.h"
-
 extern DmtxMessage *
 dmtxMessageCreate(int sizeIdx, int symbolFormat)
 {

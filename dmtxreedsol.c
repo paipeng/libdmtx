@@ -23,12 +23,7 @@
  *   o try doxygen using using the JavaDoc style and JAVADOC_AUTOBRIEF = YES
  *   o switch doxygen to simplified syntax, and using "\file" instead of "@file"
  */
-#include "dmtx.h"
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
+
 #define NN                      255
 #define MAX_ERROR_WORD_COUNT     68
 

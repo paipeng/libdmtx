@@ -14,16 +14,6 @@
  * \file dmtxdecodescheme.c
  */
 
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
-#include <stdio.h>
-#include <math.h>
-#include <float.h>
-#include <limits.h>
-
 /**
  * \brief  Translate encoded data stream into final output
  * \param  msg

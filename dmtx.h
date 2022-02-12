@@ -67,28 +67,6 @@ extern "C" {
 
 #define DMTX_CHECK_BOUNDS(l,i) (assert((i) >= 0 && (i) < (l)->length && (l)->length <= (l)->capacity))
 
-
-#ifndef CALLBACK_POINT_PLOT
-#define CALLBACK_POINT_PLOT(a,b,c,d)
-#endif
-
-#ifndef CALLBACK_POINT_XFRM
-#define CALLBACK_POINT_XFRM(a,b,c,d)
-#endif
-
-#ifndef CALLBACK_MODULE
-#define CALLBACK_MODULE(a,b,c,d,e)
-#endif
-
-#ifndef CALLBACK_MATRIX
-#define CALLBACK_MATRIX(a)
-#endif
-
-#ifndef CALLBACK_FINAL
-#define CALLBACK_FINAL(a,b)
-#endif
-
-
 typedef enum {
    DmtxStatusEncoding, /* Encoding is currently underway */
    DmtxStatusComplete, /* Encoding is done and everything went well */

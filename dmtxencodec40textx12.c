@@ -13,11 +13,6 @@
  * \file dmtxencodec40textx12.c
  * \brief C40/Text/X12 encoding rules
  */
-#include "dmtx.h"
-#include "dmtxstatic.h"
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
 
 #undef CHKERR
 #define CHKERR { if(stream->status != DmtxStatusEncoding) { return; } }
