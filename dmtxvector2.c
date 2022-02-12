@@ -14,6 +14,10 @@
  * \brief 2D Vector math
  */
 
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <math.h>
+#include <assert.h>
 /**
  *
  *

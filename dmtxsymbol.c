@@ -14,6 +14,7 @@
  * \file dmtxsymbol.c
  * \brief Data Matrix symbol attributes
  */
+#include "dmtx.h"
 
 
 /**

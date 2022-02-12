@@ -13,6 +13,14 @@
  * \file dmtxplacemod.c
  * \brief Data Matrix module placement
  */
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <stdio.h>
+#include <math.h>
+#include <float.h>
 
 /**
  * receives symbol row and col and returns status

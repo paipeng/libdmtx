@@ -59,6 +59,40 @@
 #undef max
 #define max(X,Y) (((X) > (Y)) ? (X) : (Y))
 
+
+
+#undef CHKERR
+#define CHKERR { if(stream->status != DmtxStatusEncoding) { return; } }
+
+#undef CHKSIZE
+#define CHKSIZE { if(sizeIdx == DmtxUndefined) { StreamMarkInvalid(stream, DmtxErrorUnknown); return; } }
+
+#undef CHKPASS
+#define CHKPASS { if(passFail == DmtxFail) { StreamMarkFatal(stream, DmtxErrorUnknown); return; } }
+
+#undef RETURN_IF_FAIL
+#define RETURN_IF_FAIL { if(*passFail == DmtxFail) return; }
+
+/* Verify stream is using expected scheme */
+#define CHKSCHEME(s) { \
+   if(stream->currentScheme != (s)) { StreamMarkFatal(stream, DmtxErrorUnexpectedScheme); return; } \
+}
+
+/* CHKERR should follow any call that might alter stream status */
+#define CHKERR { \
+   if(stream->status != DmtxStatusEncoding) { return; } \
+}
+
+/* CHKSIZE should follows typical calls to FindSymbolSize()  */
+#define CHKSIZE { \
+   if(sizeIdx == DmtxUndefined) { StreamMarkInvalid(stream, DmtxErrorUnknown); return; } \
+}
+
+
+#undef ISDIGIT
+#define ISDIGIT(n) (n > 47 && n < 58)
+
+
 typedef enum {
    DmtxEncodeNormal,  /* Use normal scheme behavior (e.g., ASCII auto) */
    DmtxEncodeCompact, /* Use only compact format within scheme */

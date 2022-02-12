@@ -13,7 +13,11 @@
  * \file dmtxencodeedifact.c
  * \brief Edifact encoding rules
  */
-
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
 /**
  *
  *

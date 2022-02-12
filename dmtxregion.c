@@ -15,6 +15,15 @@
  * \brief Detect barcode regions
  */
 
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <stdio.h>
+#include <math.h>
+#include <float.h>
+
 #define DMTX_HOUGH_RES 180
 
 /**

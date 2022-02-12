@@ -17,6 +17,13 @@
 #undef ISDIGIT
 #define ISDIGIT(n) (n > 47 && n < 58)
 
+#include <assert.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include "dmtx.h"
+#include "dmtxstatic.h"
 /**
  * \brief  Initialize encode struct with default values
  * \return Initialized DmtxEncode struct

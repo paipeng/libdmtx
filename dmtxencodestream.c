@@ -13,7 +13,11 @@
  * \file dmtxencodestream.c
  * \brief DmtxEncodeStream implementation
  */
-
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
 /**
  *
  *

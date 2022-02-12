@@ -13,7 +13,11 @@
  * \file dmtxencodescheme.c
  * \brief Logic for encoding in single scheme
  */
-
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
 /**
  * In this file:
  *

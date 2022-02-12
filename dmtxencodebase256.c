@@ -13,7 +13,11 @@
  * \file dmtxencodebase256.c
  * \brief Base 256 encoding rules
  */
-
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
 /**
  *
  *

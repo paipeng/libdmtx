@@ -54,6 +54,12 @@
  *     top-to-bottom; use DmtxFlipNone
  */
 
+#include "dmtx.h"
+#include "dmtxstatic.h"
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+
 /**
  * \brief  XXX
  * \param  XXX
