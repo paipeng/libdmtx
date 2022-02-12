@@ -7,30 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73C2BC7227B7406800896E4F /* dmtximage.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5A27B7406800896E4F /* dmtximage.c */; };
-		73C2BC7327B7406800896E4F /* dmtxencodeascii.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5B27B7406800896E4F /* dmtxencodeascii.c */; };
-		73C2BC7427B7406800896E4F /* dmtxreedsol.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5C27B7406800896E4F /* dmtxreedsol.c */; };
-		73C2BC7527B7406800896E4F /* dmtxmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5D27B7406800896E4F /* dmtxmessage.c */; };
-		73C2BC7627B7406800896E4F /* dmtxbytelist.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5E27B7406800896E4F /* dmtxbytelist.c */; };
-		73C2BC7727B7406800896E4F /* dmtxplacemod.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC5F27B7406800896E4F /* dmtxplacemod.c */; };
-		73C2BC7827B7406800896E4F /* dmtxscangrid.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6027B7406800896E4F /* dmtxscangrid.c */; };
 		73C2BC7927B7406800896E4F /* dmtxstatic.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6127B7406800896E4F /* dmtxstatic.h */; };
-		73C2BC7A27B7406800896E4F /* dmtxencodec40textx12.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6227B7406800896E4F /* dmtxencodec40textx12.c */; };
-		73C2BC7B27B7406800896E4F /* dmtxregion.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6327B7406800896E4F /* dmtxregion.c */; };
-		73C2BC7C27B7406800896E4F /* dmtxtime.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6427B7406800896E4F /* dmtxtime.c */; };
-		73C2BC7D27B7406800896E4F /* dmtxdecodescheme.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6527B7406800896E4F /* dmtxdecodescheme.c */; };
-		73C2BC7E27B7406800896E4F /* dmtxmatrix3.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6627B7406800896E4F /* dmtxmatrix3.c */; };
 		73C2BC7F27B7406800896E4F /* dmtx.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6727B7406800896E4F /* dmtx.c */; };
-		73C2BC8027B7406800896E4F /* dmtxencodebase256.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6827B7406800896E4F /* dmtxencodebase256.c */; };
-		73C2BC8127B7406800896E4F /* dmtxencodeoptimize.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6927B7406800896E4F /* dmtxencodeoptimize.c */; };
-		73C2BC8227B7406800896E4F /* dmtxencodeedifact.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6A27B7406800896E4F /* dmtxencodeedifact.c */; };
-		73C2BC8327B7406800896E4F /* dmtxencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6B27B7406800896E4F /* dmtxencode.c */; };
 		73C2BC8427B7406800896E4F /* dmtx.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C2BC6C27B7406800896E4F /* dmtx.h */; };
-		73C2BC8527B7406800896E4F /* dmtxencodestream.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6D27B7406800896E4F /* dmtxencodestream.c */; };
-		73C2BC8627B7406800896E4F /* dmtxvector2.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6E27B7406800896E4F /* dmtxvector2.c */; };
-		73C2BC8727B7406800896E4F /* dmtxencodescheme.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC6F27B7406800896E4F /* dmtxencodescheme.c */; };
-		73C2BC8827B7406800896E4F /* dmtxdecode.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC7027B7406800896E4F /* dmtxdecode.c */; };
-		73C2BC8927B7406800896E4F /* dmtxsymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 73C2BC7127B7406800896E4F /* dmtxsymbol.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,27 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C2BC7F27B7406800896E4F /* dmtx.c in Sources */,
-				73C2BC7527B7406800896E4F /* dmtxmessage.c in Sources */,
-				73C2BC7C27B7406800896E4F /* dmtxtime.c in Sources */,
-				73C2BC8827B7406800896E4F /* dmtxdecode.c in Sources */,
-				73C2BC7B27B7406800896E4F /* dmtxregion.c in Sources */,
-				73C2BC7A27B7406800896E4F /* dmtxencodec40textx12.c in Sources */,
-				73C2BC7727B7406800896E4F /* dmtxplacemod.c in Sources */,
-				73C2BC7627B7406800896E4F /* dmtxbytelist.c in Sources */,
-				73C2BC8727B7406800896E4F /* dmtxencodescheme.c in Sources */,
-				73C2BC8027B7406800896E4F /* dmtxencodebase256.c in Sources */,
-				73C2BC8127B7406800896E4F /* dmtxencodeoptimize.c in Sources */,
-				73C2BC7327B7406800896E4F /* dmtxencodeascii.c in Sources */,
-				73C2BC8927B7406800896E4F /* dmtxsymbol.c in Sources */,
-				73C2BC7E27B7406800896E4F /* dmtxmatrix3.c in Sources */,
-				73C2BC7227B7406800896E4F /* dmtximage.c in Sources */,
-				73C2BC8527B7406800896E4F /* dmtxencodestream.c in Sources */,
-				73C2BC7427B7406800896E4F /* dmtxreedsol.c in Sources */,
-				73C2BC7D27B7406800896E4F /* dmtxdecodescheme.c in Sources */,
-				73C2BC7827B7406800896E4F /* dmtxscangrid.c in Sources */,
-				73C2BC8227B7406800896E4F /* dmtxencodeedifact.c in Sources */,
-				73C2BC8627B7406800896E4F /* dmtxvector2.c in Sources */,
-				73C2BC8327B7406800896E4F /* dmtxencode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
