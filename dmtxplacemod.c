@@ -72,7 +72,7 @@ dmtxSymbolModuleStatus(DmtxMessage *message, int sizeIdx, int symbolRow, int sym
  * \param  moduleOnColor
  * \return Number of codewords read
  */
-static int
+int
 ModulePlacementEcc200(unsigned char *modules, unsigned char *codewords, int sizeIdx, int moduleOnColor)
 {
    int row, col, chr;
@@ -146,7 +146,7 @@ ModulePlacementEcc200(unsigned char *modules, unsigned char *codewords, int size
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PatternShapeStandard(unsigned char *modules, int mappingRows, int mappingCols, int row, int col, unsigned char *codeword, int moduleOnColor)
 {
    PlaceModule(modules, mappingRows, mappingCols, row-2, col-2, codeword, DmtxMaskBit1, moduleOnColor);
@@ -168,7 +168,7 @@ PatternShapeStandard(unsigned char *modules, int mappingRows, int mappingCols, i
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PatternShapeSpecial1(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor)
 {
    PlaceModule(modules, mappingRows, mappingCols, mappingRows-1, 0, codeword, DmtxMaskBit1, moduleOnColor);
@@ -190,7 +190,7 @@ PatternShapeSpecial1(unsigned char *modules, int mappingRows, int mappingCols, u
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PatternShapeSpecial2(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor)
 {
    PlaceModule(modules, mappingRows, mappingCols, mappingRows-3, 0, codeword, DmtxMaskBit1, moduleOnColor);
@@ -212,7 +212,7 @@ PatternShapeSpecial2(unsigned char *modules, int mappingRows, int mappingCols, u
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PatternShapeSpecial3(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor)
 {
    PlaceModule(modules, mappingRows, mappingCols, mappingRows-3, 0, codeword, DmtxMaskBit1, moduleOnColor);
@@ -234,7 +234,7 @@ PatternShapeSpecial3(unsigned char *modules, int mappingRows, int mappingCols, u
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PatternShapeSpecial4(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor)
 {
    PlaceModule(modules, mappingRows, mappingCols, mappingRows-1, 0, codeword, DmtxMaskBit1, moduleOnColor);
@@ -259,7 +259,7 @@ PatternShapeSpecial4(unsigned char *modules, int mappingRows, int mappingCols, u
  * \param  moduleOnColor
  * \return void
  */
-static void
+void
 PlaceModule(unsigned char *modules, int mappingRows, int mappingCols, int row, int col, unsigned char *codeword, int mask, int moduleOnColor)
 {
    if(row < 0) {

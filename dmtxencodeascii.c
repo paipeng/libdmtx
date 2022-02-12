@@ -31,7 +31,7 @@
  * \param stream
  * \param option [Expanded|Compact|Normal]
  */
-static void
+void
 EncodeNextChunkAscii(DmtxEncodeStream *stream, int option)
 {
    DmtxByte v0, v1;
@@ -99,7 +99,7 @@ EncodeNextChunkAscii(DmtxEncodeStream *stream, int option)
  * this code is separated from EncodeNextChunkAscii() because it needs to be
  * called directly elsewhere
  */
-static void
+void
 AppendValueAscii(DmtxEncodeStream *stream, DmtxByte value)
 {
    CHKSCHEME(DmtxSchemeAscii);
@@ -112,7 +112,7 @@ AppendValueAscii(DmtxEncodeStream *stream, DmtxByte value)
  *
  *
  */
-static void
+void
 CompleteIfDoneAscii(DmtxEncodeStream *stream, int sizeIdxRequest)
 {
    int sizeIdx;
@@ -132,7 +132,7 @@ CompleteIfDoneAscii(DmtxEncodeStream *stream, int sizeIdxRequest)
  * Can we just receive a length to pad here? I don't like receiving
  * sizeIdxRequest (or sizeIdx) this late in the game
  */
-static void
+void
 PadRemainingInAscii(DmtxEncodeStream *stream, int sizeIdx)
 {
    int symbolRemaining;
@@ -163,7 +163,7 @@ PadRemainingInAscii(DmtxEncodeStream *stream, int sizeIdx)
 /**
  * consider receiving instantiated DmtxByteList instead of the output components
  */
-static DmtxByteList
+DmtxByteList
 EncodeTmpRemainingInAscii(DmtxEncodeStream *stream, DmtxByte *storage,
       int capacity, DmtxPassFail *passFail)
 {
@@ -208,7 +208,7 @@ EncodeTmpRemainingInAscii(DmtxEncodeStream *stream, DmtxByte *storage,
  * \param  codewordPosition
  * \return Randomized value
  */
-static DmtxByte
+DmtxByte
 Randomize253State(DmtxByte cwValue, int cwPosition)
 {
    int pseudoRandom, tmp;

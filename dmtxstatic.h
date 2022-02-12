@@ -160,156 +160,155 @@ typedef struct C40TextState_struct {
 } C40TextState;
 
 /* dmtxregion.c */
-static double RightAngleTrueness(DmtxVector2 c0, DmtxVector2 c1, DmtxVector2 c2, double angle);
-static DmtxPointFlow MatrixRegionSeekEdge(DmtxDecode *dec, DmtxPixelLoc loc0);
-static DmtxPassFail MatrixRegionOrientation(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin);
-static long DistanceSquared(DmtxPixelLoc a, DmtxPixelLoc b);
-static int ReadModuleColor(DmtxDecode *dec, DmtxRegion *reg, int symbolRow, int symbolCol, int sizeIdx, int colorPlane);
+double RightAngleTrueness(DmtxVector2 c0, DmtxVector2 c1, DmtxVector2 c2, double angle);
+DmtxPointFlow MatrixRegionSeekEdge(DmtxDecode *dec, DmtxPixelLoc loc0);
+DmtxPassFail MatrixRegionOrientation(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin);
+long DistanceSquared(DmtxPixelLoc a, DmtxPixelLoc b);
+int ReadModuleColor(DmtxDecode *dec, DmtxRegion *reg, int symbolRow, int symbolCol, int sizeIdx, int colorPlane);
 
-static DmtxPassFail MatrixRegionFindSize(DmtxDecode *dec, DmtxRegion *reg);
-static int CountJumpTally(DmtxDecode *dec, DmtxRegion *reg, int xStart, int yStart, DmtxDirection dir);
-static DmtxPointFlow GetPointFlow(DmtxDecode *dec, int colorPlane, DmtxPixelLoc loc, int arrive);
-static DmtxPointFlow FindStrongestNeighbor(DmtxDecode *dec, DmtxPointFlow center, int sign);
-static DmtxFollow FollowSeek(DmtxDecode *dec, DmtxRegion *reg, int seek);
-static DmtxFollow FollowSeekLoc(DmtxDecode *dec, DmtxPixelLoc loc);
-static DmtxFollow FollowStep(DmtxDecode *dec, DmtxRegion *reg, DmtxFollow followBeg, int sign);
-static DmtxFollow FollowStep2(DmtxDecode *dec, DmtxFollow followBeg, int sign);
-static DmtxPassFail TrailBlazeContinuous(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin, int maxDiagonal);
-static int TrailBlazeGapped(DmtxDecode *dec, DmtxRegion *reg, DmtxBresLine line, int streamDir);
-static int TrailClear(DmtxDecode *dec, DmtxRegion *reg, int clearMask);
-static DmtxBestLine FindBestSolidLine(DmtxDecode *dec, DmtxRegion *reg, int step0, int step1, int streamDir, int houghAvoid);
-static DmtxBestLine FindBestSolidLine2(DmtxDecode *dec, DmtxPixelLoc loc0, int tripSteps, int sign, int houghAvoid);
-static DmtxPassFail FindTravelLimits(DmtxDecode *dec, DmtxRegion *reg, DmtxBestLine *line);
-static DmtxPassFail MatrixRegionAlignCalibEdge(DmtxDecode *dec, DmtxRegion *reg, int whichEdge);
-static DmtxBresLine BresLineInit(DmtxPixelLoc loc0, DmtxPixelLoc loc1, DmtxPixelLoc locInside);
-static DmtxPassFail BresLineGetStep(DmtxBresLine line, DmtxPixelLoc target, int *travel, int *outward);
-static DmtxPassFail BresLineStep(DmtxBresLine *line, int travel, int outward);
-/*static void WriteDiagnosticImage(DmtxDecode *dec, DmtxRegion *reg, char *imagePath);*/
+DmtxPassFail MatrixRegionFindSize(DmtxDecode *dec, DmtxRegion *reg);
+int CountJumpTally(DmtxDecode *dec, DmtxRegion *reg, int xStart, int yStart, DmtxDirection dir);
+DmtxPointFlow GetPointFlow(DmtxDecode *dec, int colorPlane, DmtxPixelLoc loc, int arrive);
+DmtxPointFlow FindStrongestNeighbor(DmtxDecode *dec, DmtxPointFlow center, int sign);
+DmtxFollow FollowSeek(DmtxDecode *dec, DmtxRegion *reg, int seek);
+DmtxFollow FollowSeekLoc(DmtxDecode *dec, DmtxPixelLoc loc);
+DmtxFollow FollowStep(DmtxDecode *dec, DmtxRegion *reg, DmtxFollow followBeg, int sign);
+DmtxFollow FollowStep2(DmtxDecode *dec, DmtxFollow followBeg, int sign);
+DmtxPassFail TrailBlazeContinuous(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin, int maxDiagonal);
+int TrailBlazeGapped(DmtxDecode *dec, DmtxRegion *reg, DmtxBresLine line, int streamDir);
+int TrailClear(DmtxDecode *dec, DmtxRegion *reg, int clearMask);
+DmtxBestLine FindBestSolidLine(DmtxDecode *dec, DmtxRegion *reg, int step0, int step1, int streamDir, int houghAvoid);
+DmtxBestLine FindBestSolidLine2(DmtxDecode *dec, DmtxPixelLoc loc0, int tripSteps, int sign, int houghAvoid);
+DmtxPassFail FindTravelLimits(DmtxDecode *dec, DmtxRegion *reg, DmtxBestLine *line);
+DmtxPassFail MatrixRegionAlignCalibEdge(DmtxDecode *dec, DmtxRegion *reg, int whichEdge);
+DmtxBresLine BresLineInit(DmtxPixelLoc loc0, DmtxPixelLoc loc1, DmtxPixelLoc locInside);
+DmtxPassFail BresLineGetStep(DmtxBresLine line, DmtxPixelLoc target, int *travel, int *outward);
+DmtxPassFail BresLineStep(DmtxBresLine *line, int travel, int outward);
+/*void WriteDiagnosticImage(DmtxDecode *dec, DmtxRegion *reg, char *imagePath);*/
 
 /* dmtxdecode.c */
-static void TallyModuleJumps(DmtxDecode *dec, DmtxRegion *reg, int tally[][24], int xOrigin, int yOrigin, int mapWidth, int mapHeight, DmtxDirection dir);
-static DmtxPassFail PopulateArrayFromMatrix(DmtxDecode *dec, DmtxRegion *reg, DmtxMessage *msg);
+void TallyModuleJumps(DmtxDecode *dec, DmtxRegion *reg, int tally[][24], int xOrigin, int yOrigin, int mapWidth, int mapHeight, DmtxDirection dir);
+DmtxPassFail PopulateArrayFromMatrix(DmtxDecode *dec, DmtxRegion *reg, DmtxMessage *msg);
 
 /* dmtxdecodescheme.c */
-static DmtxPassFail DecodeDataStream(DmtxMessage *msg, int sizeIdx, unsigned char *outputStart);
-static int GetEncodationScheme(unsigned char cw);
-static void PushOutputWord(DmtxMessage *msg, int value);
-static void PushOutputC40TextWord(DmtxMessage *msg, C40TextState *state, int value);
-static void PushOutputMacroHeader(DmtxMessage *msg, int macroType);
-static void PushOutputMacroTrailer(DmtxMessage *msg);
-static unsigned char *DecodeSchemeAscii(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
-static unsigned char *DecodeSchemeC40Text(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd, DmtxScheme encScheme);
-static unsigned char *DecodeSchemeX12(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
-static unsigned char *DecodeSchemeEdifact(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
-static unsigned char *DecodeSchemeBase256(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
+DmtxPassFail DecodeDataStream(DmtxMessage *msg, int sizeIdx, unsigned char *outputStart);
+int GetEncodationScheme(unsigned char cw);
+void PushOutputWord(DmtxMessage *msg, int value);
+void PushOutputC40TextWord(DmtxMessage *msg, C40TextState *state, int value);
+void PushOutputMacroHeader(DmtxMessage *msg, int macroType);
+void PushOutputMacroTrailer(DmtxMessage *msg);
+unsigned char *DecodeSchemeAscii(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
+unsigned char *DecodeSchemeC40Text(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd, DmtxScheme encScheme);
+unsigned char *DecodeSchemeX12(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
+unsigned char *DecodeSchemeEdifact(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
+unsigned char *DecodeSchemeBase256(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd);
 
 /* dmtxencode.c */
-static void PrintPattern(DmtxEncode *encode);
-static int EncodeDataCodewords(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1);
+void PrintPattern(DmtxEncode *encode);
+int EncodeDataCodewords(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1);
 
 /* dmtxplacemod.c */
-static int ModulePlacementEcc200(unsigned char *modules, unsigned char *codewords, int sizeIdx, int moduleOnColor);
-static void PatternShapeStandard(unsigned char *modules, int mappingRows, int mappingCols, int row, int col, unsigned char *codeword, int moduleOnColor);
-static void PatternShapeSpecial1(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
-static void PatternShapeSpecial2(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
-static void PatternShapeSpecial3(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
-static void PatternShapeSpecial4(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
-static void PlaceModule(unsigned char *modules, int mappingRows, int mappingCols, int row, int col,
+int ModulePlacementEcc200(unsigned char *modules, unsigned char *codewords, int sizeIdx, int moduleOnColor);
+void PatternShapeStandard(unsigned char *modules, int mappingRows, int mappingCols, int row, int col, unsigned char *codeword, int moduleOnColor);
+void PatternShapeSpecial1(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
+void PatternShapeSpecial2(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
+void PatternShapeSpecial3(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
+void PatternShapeSpecial4(unsigned char *modules, int mappingRows, int mappingCols, unsigned char *codeword, int moduleOnColor);
+void PlaceModule(unsigned char *modules, int mappingRows, int mappingCols, int row, int col,
       unsigned char *codeword, int mask, int moduleOnColor);
 
 /* dmtxreedsol.c */
-static DmtxPassFail RsEncode(DmtxMessage *message, int sizeIdx);
-static DmtxPassFail RsDecode(unsigned char *code, int sizeIdx, int fix);
-static DmtxPassFail RsGenPoly(DmtxByteList *gen, int errorWordCount);
-static DmtxBoolean RsComputeSyndromes(DmtxByteList *syn, const DmtxByteList *rec, int blockErrorWords);
-static DmtxBoolean RsFindErrorLocatorPoly(DmtxByteList *elp, const DmtxByteList *syn, int errorWordCount, int maxCorrectable);
-static DmtxBoolean RsFindErrorLocations(DmtxByteList *loc, const DmtxByteList *elp);
-static DmtxPassFail RsRepairErrors(DmtxByteList *rec, const DmtxByteList *loc, const DmtxByteList *elp, const DmtxByteList *syn);
+DmtxPassFail RsEncode(DmtxMessage *message, int sizeIdx);
+DmtxPassFail RsDecode(unsigned char *code, int sizeIdx, int fix);
+DmtxPassFail RsGenPoly(DmtxByteList *gen, int errorWordCount);
+DmtxBoolean RsComputeSyndromes(DmtxByteList *syn, const DmtxByteList *rec, int blockErrorWords);
+DmtxBoolean RsFindErrorLocatorPoly(DmtxByteList *elp, const DmtxByteList *syn, int errorWordCount, int maxCorrectable);
+DmtxBoolean RsFindErrorLocations(DmtxByteList *loc, const DmtxByteList *elp);
+DmtxPassFail RsRepairErrors(DmtxByteList *rec, const DmtxByteList *loc, const DmtxByteList *elp, const DmtxByteList *syn);
 
 /* dmtxscangrid.c */
-static DmtxScanGrid InitScanGrid(DmtxDecode *dec);
-static int PopGridLocation(DmtxScanGrid *grid, /*@out@*/ DmtxPixelLoc *locPtr);
-static int GetGridCoordinates(DmtxScanGrid *grid, /*@out@*/ DmtxPixelLoc *locPtr);
-static void SetDerivedFields(DmtxScanGrid *grid);
+DmtxScanGrid InitScanGrid(DmtxDecode *dec);
+int PopGridLocation(DmtxScanGrid *grid, /*@out@*/ DmtxPixelLoc *locPtr);
+int GetGridCoordinates(DmtxScanGrid *grid, /*@out@*/ DmtxPixelLoc *locPtr);
+void SetDerivedFields(DmtxScanGrid *grid);
 
 /* dmtxsymbol.c */
-static int FindSymbolSize(int dataWords, int sizeIdxRequest);
+int FindSymbolSize(int dataWords, int sizeIdxRequest);
 
 /* dmtximage.c */
-static int GetBitsPerPixel(int pack);
+int GetBitsPerPixel(int pack);
 
 /* dmtxencodestream.c */
-static DmtxEncodeStream StreamInit(DmtxByteList *input, DmtxByteList *output);
-static void StreamCopy(DmtxEncodeStream *dst, DmtxEncodeStream *src);
-static void StreamMarkComplete(DmtxEncodeStream *stream, int sizeIdx);
-static void StreamMarkInvalid(DmtxEncodeStream *stream, int reasonIdx);
-static void StreamMarkFatal(DmtxEncodeStream *stream, int reasonIdx);
-static void StreamOutputChainAppend(DmtxEncodeStream *stream, DmtxByte value);
-static DmtxByte StreamOutputChainRemoveLast(DmtxEncodeStream *stream);
-static void StreamOutputSet(DmtxEncodeStream *stream, int index, DmtxByte value);
-static DmtxBoolean StreamInputHasNext(DmtxEncodeStream *stream);
-static DmtxByte StreamInputPeekNext(DmtxEncodeStream *stream);
-static DmtxByte StreamInputAdvanceNext(DmtxEncodeStream *stream);
-static void StreamInputAdvancePrev(DmtxEncodeStream *stream);
+DmtxEncodeStream StreamInit(DmtxByteList *input, DmtxByteList *output);
+void StreamCopy(DmtxEncodeStream *dst, DmtxEncodeStream *src);
+void StreamMarkComplete(DmtxEncodeStream *stream, int sizeIdx);
+void StreamMarkInvalid(DmtxEncodeStream *stream, int reasonIdx);
+void StreamMarkFatal(DmtxEncodeStream *stream, int reasonIdx);
+void StreamOutputChainAppend(DmtxEncodeStream *stream, DmtxByte value);
+DmtxByte StreamOutputChainRemoveLast(DmtxEncodeStream *stream);
+void StreamOutputSet(DmtxEncodeStream *stream, int index, DmtxByte value);
+DmtxBoolean StreamInputHasNext(DmtxEncodeStream *stream);
+DmtxByte StreamInputPeekNext(DmtxEncodeStream *stream);
+DmtxByte StreamInputAdvanceNext(DmtxEncodeStream *stream);
+void StreamInputAdvancePrev(DmtxEncodeStream *stream);
 
 /* dmtxencodescheme.c */
-static int EncodeSingleScheme(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1);
-static void EncodeNextChunk(DmtxEncodeStream *stream, int scheme, int subScheme, int sizeIdxRequest);
-static void EncodeChangeScheme(DmtxEncodeStream *stream, DmtxScheme targetScheme, int unlatchType);
-static int GetRemainingSymbolCapacity(int outputLength, int sizeIdx);
+int EncodeSingleScheme(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1);
+void EncodeNextChunk(DmtxEncodeStream *stream, int scheme, int subScheme, int sizeIdxRequest);
+void EncodeChangeScheme(DmtxEncodeStream *stream, DmtxScheme targetScheme, int unlatchType);
+int GetRemainingSymbolCapacity(int outputLength, int sizeIdx);
 
 /* dmtxencodeoptimize.c */
-static int EncodeOptimizeBest(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, int fnc1);
-static void StreamAdvanceFromBest(DmtxEncodeStream *streamNext,
+int EncodeOptimizeBest(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, int fnc1);
+void StreamAdvanceFromBest(DmtxEncodeStream *streamNext,
       DmtxEncodeStream *streamList, int targeteState, int sizeIdxRequest);
-static void AdvanceAsciiCompact(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
+void AdvanceAsciiCompact(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
       int state, int inputNext, int sizeIdxRequest);
-static void AdvanceCTX(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
+void AdvanceCTX(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
       int state, int inputNext, int ctxValueCount, int sizeIdxRequest);
-static void AdvanceEdifact(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
+void AdvanceEdifact(DmtxEncodeStream *streamNext, DmtxEncodeStream *streamList,
       int state, int inputNext, int sizeIdxRequest);
-static int GetScheme(int state);
-static DmtxBoolean ValidStateSwitch(int fromState, int targetState);
+int GetScheme(int state);
+DmtxBoolean ValidStateSwitch(int fromState, int targetState);
 
 /* dmtxencodeascii.c */
-static void EncodeNextChunkAscii(DmtxEncodeStream *stream, int option);
-static void AppendValueAscii(DmtxEncodeStream *stream, DmtxByte value);
-static void CompleteIfDoneAscii(DmtxEncodeStream *stream, int sizeIdxRequest);
-static void PadRemainingInAscii(DmtxEncodeStream *stream, int sizeIdx);
-static DmtxByteList EncodeTmpRemainingInAscii(DmtxEncodeStream *stream, DmtxByte *storage, int capacity, DmtxPassFail *passFail);
-static DmtxByte Randomize253State(DmtxByte cwValue, int cwPosition);
+void EncodeNextChunkAscii(DmtxEncodeStream *stream, int option);
+void AppendValueAscii(DmtxEncodeStream *stream, DmtxByte value);
+void CompleteIfDoneAscii(DmtxEncodeStream *stream, int sizeIdxRequest);
+void PadRemainingInAscii(DmtxEncodeStream *stream, int sizeIdx);
+DmtxByteList EncodeTmpRemainingInAscii(DmtxEncodeStream *stream, DmtxByte *storage, int capacity, DmtxPassFail *passFail);
+DmtxByte Randomize253State(DmtxByte cwValue, int cwPosition);
 
 /* dmtxencodec40textx12.c */
-static void EncodeNextChunkCTX(DmtxEncodeStream *stream, int sizeIdxRequest);
-static void AppendValuesCTX(DmtxEncodeStream *stream, DmtxByteList *valueList);
-static void AppendUnlatchCTX(DmtxEncodeStream *stream);
-static void CompleteIfDoneCTX(DmtxEncodeStream *stream, int sizeIdxRequest);
-static void CompletePartialC40Text(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest);
-static void CompletePartialX12(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest);
-static DmtxBoolean PartialX12ChunkRemains(DmtxEncodeStream *stream);
-static void PushCTXValues(DmtxByteList *valueList, DmtxByte inputValue, int targetScheme, DmtxPassFail *passFail, int fnc1);
-static DmtxBoolean IsCTX(int scheme);
-static void ShiftValueListBy3(DmtxByteList *list, DmtxPassFail *passFail);
+void EncodeNextChunkCTX(DmtxEncodeStream *stream, int sizeIdxRequest);
+void AppendValuesCTX(DmtxEncodeStream *stream, DmtxByteList *valueList);
+void AppendUnlatchCTX(DmtxEncodeStream *stream);
+void CompleteIfDoneCTX(DmtxEncodeStream *stream, int sizeIdxRequest);
+void CompletePartialC40Text(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest);
+void CompletePartialX12(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest);
+DmtxBoolean PartialX12ChunkRemains(DmtxEncodeStream *stream);
+void PushCTXValues(DmtxByteList *valueList, DmtxByte inputValue, int targetScheme, DmtxPassFail *passFail, int fnc1);
+DmtxBoolean IsCTX(int scheme);
+void ShiftValueListBy3(DmtxByteList *list, DmtxPassFail *passFail);
 
 /* dmtxencodeedifact.c */
-static void EncodeNextChunkEdifact(DmtxEncodeStream *stream);
-static void AppendValueEdifact(DmtxEncodeStream *stream, DmtxByte value);
-static void CompleteIfDoneEdifact(DmtxEncodeStream *stream, int sizeIdxRequest);
+void EncodeNextChunkEdifact(DmtxEncodeStream *stream);
+void AppendValueEdifact(DmtxEncodeStream *stream, DmtxByte value);
+void CompleteIfDoneEdifact(DmtxEncodeStream *stream, int sizeIdxRequest);
 
 /* dmtxencodebase256.c */
-static void EncodeNextChunkBase256(DmtxEncodeStream *stream);
-static void AppendValueBase256(DmtxEncodeStream *stream, DmtxByte value);
-static void CompleteIfDoneBase256(DmtxEncodeStream *stream, int sizeIdxRequest);
-static void UpdateBase256ChainHeader(DmtxEncodeStream *stream, int perfectSizeIdx);
-static void Base256OutputChainInsertFirst(DmtxEncodeStream *stream);
-static void Base256OutputChainRemoveFirst(DmtxEncodeStream *stream);
-static DmtxByte Randomize255State(DmtxByte cwValue, int cwPosition);
-static unsigned char UnRandomize255State(unsigned char value, int idx);
-
 static const int dmtxNeighborNone = 8;
 static const int dmtxPatternX[] = { -1,  0,  1,  1,  1,  0, -1, -1 };
 static const int dmtxPatternY[] = { -1, -1, -1,  0,  1,  1,  1,  0 };
 static const DmtxPointFlow dmtxBlankEdge = { 0, 0, 0, DmtxUndefined, { -1, -1 } };
+void EncodeNextChunkBase256(DmtxEncodeStream *stream);
+void AppendValueBase256(DmtxEncodeStream *stream, DmtxByte value);
+void CompleteIfDoneBase256(DmtxEncodeStream *stream, int sizeIdxRequest);
+void UpdateBase256ChainHeader(DmtxEncodeStream *stream, int perfectSizeIdx);
+void Base256OutputChainInsertFirst(DmtxEncodeStream *stream);
+void Base256OutputChainRemoveFirst(DmtxEncodeStream *stream);
+DmtxByte Randomize255State(DmtxByte cwValue, int cwPosition);
+unsigned char UnRandomize255State(unsigned char value, int idx);
 
 /*@ +charint @*/
 

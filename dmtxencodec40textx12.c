@@ -35,7 +35,7 @@
  *
  *
  */
-static void
+void
 EncodeNextChunkCTX(DmtxEncodeStream *stream, int sizeIdxRequest)
 {
    int i;
@@ -112,7 +112,7 @@ EncodeNextChunkCTX(DmtxEncodeStream *stream, int sizeIdxRequest)
  *
  *
  */
-static void
+void
 AppendValuesCTX(DmtxEncodeStream *stream, DmtxByteList *valueList)
 {
    int pairValue;
@@ -147,7 +147,7 @@ AppendValuesCTX(DmtxEncodeStream *stream, DmtxByteList *valueList)
  *
  *
  */
-static void
+void
 AppendUnlatchCTX(DmtxEncodeStream *stream)
 {
    if(!IsCTX(stream->currentScheme))
@@ -177,7 +177,7 @@ AppendUnlatchCTX(DmtxEncodeStream *stream)
  *    (a)     3       2  Special case
  *            -       -  UNLATCH [PAD]
  */
-static void
+void
 CompleteIfDoneCTX(DmtxEncodeStream *stream, int sizeIdxRequest)
 {
    int sizeIdx;
@@ -226,7 +226,7 @@ CompleteIfDoneCTX(DmtxEncodeStream *stream, int sizeIdxRequest)
  *    (c)  ASCII 1       2  UNLATCH ASCII
  *               -       -  UNLATCH (finish ASCII)
  */
-static void
+void
 CompletePartialC40Text(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest)
 {
    int i;
@@ -318,7 +318,7 @@ CompletePartialC40Text(DmtxEncodeStream *stream, DmtxByteList *valueList, int si
  * an implied unlatch if there is exactly one ascii codeword and one symbol
  * codeword remaining. Otherwise use explicit unlatch.
  */
-static void
+void
 CompletePartialX12(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeIdxRequest)
 {
    int i;
@@ -379,7 +379,7 @@ CompletePartialX12(DmtxEncodeStream *stream, DmtxByteList *valueList, int sizeId
 /**
  * Return DmtxTrue 1 or 2 X12 values remain, otherwise DmtxFalse
  */
-static DmtxBoolean
+DmtxBoolean
 PartialX12ChunkRemains(DmtxEncodeStream *stream)
 {
    DmtxEncodeStream streamTmp;
@@ -427,7 +427,7 @@ PartialX12ChunkRemains(DmtxEncodeStream *stream)
  *
  *
  */
-static void
+void
 PushCTXValues(DmtxByteList *valueList, DmtxByte inputValue, int targetScheme,
       DmtxPassFail *passFail, int fnc1)
 {
@@ -557,7 +557,7 @@ PushCTXValues(DmtxByteList *valueList, DmtxByte inputValue, int targetScheme,
  *
  *
  */
-static DmtxBoolean
+DmtxBoolean
 IsCTX(int scheme)
 {
    DmtxBoolean isCTX;
@@ -574,7 +574,7 @@ IsCTX(int scheme)
  *
  *
  */
-static void
+void
 ShiftValueListBy3(DmtxByteList *list, DmtxPassFail *passFail)
 {
    int i;

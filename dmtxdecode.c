@@ -587,7 +587,7 @@ dmtxDecodeCreateDiagnostic(DmtxDecode *dec, int *totalBytes, int *headerBytes, i
  * \param  dir
  * \return void
  */
-static void
+void
 TallyModuleJumps(DmtxDecode *dec, DmtxRegion *reg, int tally[][24], int xOrigin, int yOrigin, int mapWidth, int mapHeight, DmtxDirection dir)
 {
    int extent, weight;
@@ -699,7 +699,7 @@ TallyModuleJumps(DmtxDecode *dec, DmtxRegion *reg, int tally[][24], int xOrigin,
  * \param  reg
  * \return DmtxPass | DmtxFail
  */
-static DmtxPassFail
+DmtxPassFail
 PopulateArrayFromMatrix(DmtxDecode *dec, DmtxRegion *reg, DmtxMessage *msg)
 {
    //fprintf(stdout, "libdmtx::PopulateArrayFromMatrix()\n");

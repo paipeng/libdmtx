@@ -22,7 +22,7 @@
  *
  *
  */
-static void
+void
 EncodeNextChunkBase256(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -48,7 +48,7 @@ EncodeNextChunkBase256(DmtxEncodeStream *stream)
  *
  *
  */
-static void
+void
 AppendValueBase256(DmtxEncodeStream *stream, DmtxByte value)
 {
    CHKSCHEME(DmtxSchemeBase256);
@@ -65,7 +65,7 @@ AppendValueBase256(DmtxEncodeStream *stream, DmtxByte value)
  * special one-byte length header value that can be used (i think ... read the
  * spec again before commiting to anything)
  */
-static void
+void
 CompleteIfDoneBase256(DmtxEncodeStream *stream, int sizeIdxRequest)
 {
    int sizeIdx;
@@ -111,7 +111,7 @@ CompleteIfDoneBase256(DmtxEncodeStream *stream, int sizeIdxRequest)
  *
  *
  */
-static void
+void
 UpdateBase256ChainHeader(DmtxEncodeStream *stream, int perfectSizeIdx)
 {
    int headerIndex;
@@ -203,7 +203,7 @@ UpdateBase256ChainHeader(DmtxEncodeStream *stream, int perfectSizeIdx)
  * insert element at beginning of chain, shifting all following elements forward by one
  * used for binary length changes
  */
-static void
+void
 Base256OutputChainInsertFirst(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -232,7 +232,7 @@ Base256OutputChainInsertFirst(DmtxEncodeStream *stream)
  * remove first element from chain, shifting all following elements back by one
  * used for binary length changes end condition
  */
-static void
+void
 Base256OutputChainRemoveFirst(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -260,7 +260,7 @@ Base256OutputChainRemoveFirst(DmtxEncodeStream *stream)
  * \param  position
  * \return Randomized value
  */
-static DmtxByte
+DmtxByte
 Randomize255State(DmtxByte value, int position)
 {
    int pseudoRandom, tmp;
@@ -277,7 +277,7 @@ Randomize255State(DmtxByte value, int position)
  * \param  idx
  * \return Unrandomized value
  */
-static unsigned char
+unsigned char
 UnRandomize255State(unsigned char value, int idx)
 {
    int pseudoRandom;

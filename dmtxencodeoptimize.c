@@ -80,7 +80,7 @@ static void DumpStreams(DmtxEncodeStream *streamBest)
  *
  *
  */
-static int
+int
 EncodeOptimizeBest(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, int fnc1)
 {
    enum SchemeState state;
@@ -190,7 +190,7 @@ EncodeOptimizeBest(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest
  * start on same input and encodes same number of inputs. Only difference
  * is the number of latches/unlatches that are also encoded
  */
-static void
+void
 StreamAdvanceFromBest(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
      int targetState, int sizeIdxRequest)
 {
@@ -234,7 +234,7 @@ StreamAdvanceFromBest(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBe
 /**
  *
  */
-static void
+void
 AdvanceAsciiCompact(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
       int targetState, int inputNext, int sizeIdxRequest)
 {
@@ -275,7 +275,7 @@ AdvanceAsciiCompact(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest
 /**
  *
  */
-static void
+void
 AdvanceCTX(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
       int targetState, int inputNext, int ctxValueCount, int sizeIdxRequest)
 {
@@ -327,7 +327,7 @@ AdvanceCTX(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
 /**
  *
  */
-static void
+void
 AdvanceEdifact(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
       int targetState, int inputNext, int sizeIdxRequest)
 {
@@ -376,7 +376,7 @@ AdvanceEdifact(DmtxEncodeStream *streamsNext, DmtxEncodeStream *streamsBest,
  *
  *
  */
-static int
+int
 GetScheme(int state)
 {
    DmtxScheme scheme;
@@ -424,7 +424,7 @@ GetScheme(int state)
  *
  *
  */
-static DmtxBoolean
+DmtxBoolean
 ValidStateSwitch(int fromState, int targetState)
 {
    DmtxBoolean validStateSwitch;

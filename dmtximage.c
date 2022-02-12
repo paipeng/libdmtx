@@ -404,7 +404,7 @@ dmtxImageContainsFloat(DmtxImage *img, double x, double y)
  *
  *
  */
-static int
+int
 GetBitsPerPixel(int pack)
 {
    switch(pack) {

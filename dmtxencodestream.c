@@ -22,7 +22,7 @@
  *
  *
  */
-static DmtxEncodeStream
+DmtxEncodeStream
 StreamInit(DmtxByteList *input, DmtxByteList *output)
 {
    DmtxEncodeStream stream;
@@ -45,7 +45,7 @@ StreamInit(DmtxByteList *input, DmtxByteList *output)
  *
  *
  */
-static void
+void
 StreamCopy(DmtxEncodeStream *dst, DmtxEncodeStream *src)
 {
    DmtxPassFail passFail;
@@ -67,7 +67,7 @@ StreamCopy(DmtxEncodeStream *dst, DmtxEncodeStream *src)
  *
  *
  */
-static void
+void
 StreamMarkComplete(DmtxEncodeStream *stream, int sizeIdx)
 {
    if(stream->status == DmtxStatusEncoding)
@@ -82,7 +82,7 @@ StreamMarkComplete(DmtxEncodeStream *stream, int sizeIdx)
  *
  *
  */
-static void
+void
 StreamMarkInvalid(DmtxEncodeStream *stream, int reasonIdx)
 {
    stream->status = DmtxStatusInvalid;
@@ -93,7 +93,7 @@ StreamMarkInvalid(DmtxEncodeStream *stream, int reasonIdx)
  *
  *
  */
-static void
+void
 StreamMarkFatal(DmtxEncodeStream *stream, int reasonIdx)
 {
    stream->status = DmtxStatusFatal;
@@ -104,7 +104,7 @@ StreamMarkFatal(DmtxEncodeStream *stream, int reasonIdx)
  * push on newest/last append
  * used for encoding each output cw
  */
-static void
+void
 StreamOutputChainAppend(DmtxEncodeStream *stream, DmtxByte value)
 {
    DmtxPassFail passFail;
@@ -121,7 +121,7 @@ StreamOutputChainAppend(DmtxEncodeStream *stream, DmtxByte value)
  * pop off newest/last
  * used for edifact
  */
-static DmtxByte
+DmtxByte
 StreamOutputChainRemoveLast(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -145,7 +145,7 @@ StreamOutputChainRemoveLast(DmtxEncodeStream *stream)
  * overwrite arbitrary element
  * used for binary length changes
  */
-static void
+void
 StreamOutputSet(DmtxEncodeStream *stream, int index, DmtxByte value)
 {
    if(index < 0 || index >= stream->output->length)
@@ -158,7 +158,7 @@ StreamOutputSet(DmtxEncodeStream *stream, int index, DmtxByte value)
  *
  *
  */
-static DmtxBoolean
+DmtxBoolean
 StreamInputHasNext(DmtxEncodeStream *stream)
 {
    return (stream->inputNext < stream->input->length) ? DmtxTrue : DmtxFalse;
@@ -168,7 +168,7 @@ StreamInputHasNext(DmtxEncodeStream *stream)
  * peek at first/oldest
  * used for ascii double digit
  */
-static DmtxByte
+DmtxByte
 StreamInputPeekNext(DmtxEncodeStream *stream)
 {
    DmtxByte value = 0;
@@ -187,7 +187,7 @@ StreamInputPeekNext(DmtxEncodeStream *stream)
  * \param value Value to populate, can be null (for blind dequeues)
  * \param stream
  */
-static DmtxByte
+DmtxByte
 StreamInputAdvanceNext(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -206,7 +206,7 @@ StreamInputAdvanceNext(DmtxEncodeStream *stream)
  * \param value Value to populate, can be null (for blind dequeues)
  * \param stream
  */
-static void
+void
 StreamInputAdvancePrev(DmtxEncodeStream *stream)
 {
    if(stream->inputNext > 0)

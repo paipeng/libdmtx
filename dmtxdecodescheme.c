@@ -104,7 +104,7 @@ DecodeDataStream(DmtxMessage *msg, int sizeIdx, unsigned char *outputStart)
  * \param  cw
  * \return Pointer to next undecoded codeword
  */
-static int
+int
 GetEncodationScheme(unsigned char cw)
 {
    DmtxScheme encScheme;
@@ -137,7 +137,7 @@ GetEncodationScheme(unsigned char cw)
  *
  *
  */
-static void
+void
 PushOutputWord(DmtxMessage *msg, int value)
 {
    assert(value >= 0 && value < 256);
@@ -159,7 +159,7 @@ ValidOutputWord(int value)
  *
  *
  */
-static void
+void
 PushOutputC40TextWord(DmtxMessage *msg, C40TextState *state, int value)
 {
    assert(value >= 0 && value < 256);
@@ -181,7 +181,7 @@ PushOutputC40TextWord(DmtxMessage *msg, C40TextState *state, int value)
  *
  *
  */
-static void
+void
 PushOutputMacroHeader(DmtxMessage *msg, int macroType)
 {
    PushOutputWord(msg, '[');
@@ -203,7 +203,7 @@ PushOutputMacroHeader(DmtxMessage *msg, int macroType)
  *
  *
  */
-static void
+void
 PushOutputMacroTrailer(DmtxMessage *msg)
 {
    PushOutputWord(msg, 30); /* ASCII RS */
@@ -218,7 +218,7 @@ PushOutputMacroTrailer(DmtxMessage *msg)
  * \return Pointer to next undecoded codeword
  *         NULL if an error was detected in the stream
  */
-static unsigned char *
+unsigned char *
 DecodeSchemeAscii(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
 {
    int upperShift = DmtxFalse;
@@ -279,7 +279,7 @@ DecodeSchemeAscii(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
  * \param  encScheme
  * \return Pointer to next undecoded codeword
  */
-static unsigned char *
+unsigned char *
 DecodeSchemeC40Text(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd, DmtxScheme encScheme)
 {
    int i;
@@ -382,7 +382,7 @@ DecodeSchemeC40Text(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd
  * \param  dataEnd
  * \return Pointer to next undecoded codeword
  */
-static unsigned char *
+unsigned char *
 DecodeSchemeX12(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
 {
    int i;
@@ -436,7 +436,7 @@ DecodeSchemeX12(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
  * \param  dataEnd
  * \return Pointer to next undecoded codeword
  */
-static unsigned char *
+unsigned char *
 DecodeSchemeEdifact(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
 {
    int i;
@@ -519,7 +519,7 @@ DecodeSchemeEdifact(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd
  * \return Pointer to next undecoded codeword,
  *         NULL if an error was detected in the stream
  */
-static unsigned char *
+unsigned char *
 DecodeSchemeBase256(DmtxMessage *msg, unsigned char *ptr, unsigned char *dataEnd)
 {
    int d0, d1;

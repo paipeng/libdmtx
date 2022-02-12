@@ -88,7 +88,7 @@
  *
  *
  */
-static int
+int
 EncodeSingleScheme(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1)
 {
    DmtxEncodeStream stream;
@@ -121,7 +121,7 @@ EncodeSingleScheme(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest
  * Each of these functions will encode the next symbol input word, and in some
  * cases this requires additional input words to be encoded as well.
  */
-static void
+void
 EncodeNextChunk(DmtxEncodeStream *stream, int scheme, int option, int sizeIdxRequest)
 {
    /* Special case: Prevent X12 from entering state with no way to unlatch */
@@ -172,7 +172,7 @@ EncodeNextChunk(DmtxEncodeStream *stream, int scheme, int option, int sizeIdxReq
  *
  *
  */
-static void
+void
 EncodeChangeScheme(DmtxEncodeStream *stream, DmtxScheme targetScheme, int unlatchType)
 {
    /* Nothing to do */
@@ -244,7 +244,7 @@ EncodeChangeScheme(DmtxEncodeStream *stream, DmtxScheme targetScheme, int unlatc
  *
  *
  */
-static int
+int
 GetRemainingSymbolCapacity(int outputLength, int sizeIdx)
 {
    int capacity;

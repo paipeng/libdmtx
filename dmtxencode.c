@@ -394,7 +394,7 @@ dmtxEncodeDataMosaic(DmtxEncode *enc, int inputSize, unsigned char *inputString)
  * Future: pass DmtxEncode to this function with an error reason field, which
  *         goes to EncodeSingle... too
  */
-static int
+int
 EncodeDataCodewords(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest, DmtxScheme scheme, int fnc1)
 {
    int sizeIdx;
@@ -421,7 +421,7 @@ EncodeDataCodewords(DmtxByteList *input, DmtxByteList *output, int sizeIdxReques
  * \param  enc
  * \return void
  */
-static void
+void
 PrintPattern(DmtxEncode *enc)
 {
    int i, j;

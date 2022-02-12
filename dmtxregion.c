@@ -158,7 +158,7 @@ dmtxRegionScanPixel(DmtxDecode *dec, int x, int y)
  *
  *
  */
-static DmtxPointFlow
+DmtxPointFlow
 MatrixRegionSeekEdge(DmtxDecode *dec, DmtxPixelLoc loc)
 {
    int i;
@@ -203,7 +203,7 @@ MatrixRegionSeekEdge(DmtxDecode *dec, DmtxPixelLoc loc)
  *
  *
  */
-static DmtxPassFail
+DmtxPassFail
 MatrixRegionOrientation(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow begin)
 {
    int cross;
@@ -366,7 +366,7 @@ MatrixRegionOrientation(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow begin)
  *
  *
  */
-static long
+long
 DistanceSquared(DmtxPixelLoc a, DmtxPixelLoc b)
 {
    long xDelta, yDelta;
@@ -574,7 +574,7 @@ dmtxRegionUpdateXfrms(DmtxDecode *dec, DmtxRegion *reg)
  *
  *
  */
-static double
+double
 RightAngleTrueness(DmtxVector2 c0, DmtxVector2 c1, DmtxVector2 c2, double angle)
 {
    DmtxVector2 vA, vB;
@@ -598,7 +598,7 @@ RightAngleTrueness(DmtxVector2 c0, DmtxVector2 c1, DmtxVector2 c2, double angle)
  * \param  sizeIdx
  * \return Averaged module color
  */
-static int
+int
 ReadModuleColor(DmtxDecode *dec, DmtxRegion *reg, int symbolRow, int symbolCol,
       int sizeIdx, int colorPlane)
 {
@@ -636,7 +636,7 @@ ReadModuleColor(DmtxDecode *dec, DmtxRegion *reg, int symbolRow, int symbolCol,
  * \param  reg
  * \return DmtxPass | DmtxFail
  */
-static DmtxPassFail
+DmtxPassFail
 MatrixRegionFindSize(DmtxDecode *dec, DmtxRegion *reg)
 {
    int row, col;
@@ -778,7 +778,7 @@ MatrixRegionFindSize(DmtxDecode *dec, DmtxRegion *reg)
  * \param  dir
  * \return Jump count
  */
-static int
+int
 CountJumpTally(DmtxDecode *dec, DmtxRegion *reg, int xStart, int yStart, DmtxDirection dir)
 {
    int x, xInc = 0;
@@ -837,7 +837,7 @@ CountJumpTally(DmtxDecode *dec, DmtxRegion *reg, int xStart, int yStart, DmtxDir
  *
  *
  */
-static DmtxPointFlow
+DmtxPointFlow
 GetPointFlow(DmtxDecode *dec, int colorPlane, DmtxPixelLoc loc, int arrive)
 {
    static const int coefficient[] = {  0,  1,  2,  1,  0, -1, -2, -1 };
@@ -906,7 +906,7 @@ GetPointFlow(DmtxDecode *dec, int colorPlane, DmtxPixelLoc loc, int arrive)
  *
  *
  */
-static DmtxPointFlow
+DmtxPointFlow
 FindStrongestNeighbor(DmtxDecode *dec, DmtxPointFlow center, int sign)
 {
    int i;
@@ -958,7 +958,7 @@ FindStrongestNeighbor(DmtxDecode *dec, DmtxPointFlow center, int sign)
  *
  *
  */
-static DmtxFollow
+DmtxFollow
 FollowSeek(DmtxDecode *dec, DmtxRegion *reg, int seek)
 {
    int i;
@@ -985,7 +985,7 @@ FollowSeek(DmtxDecode *dec, DmtxRegion *reg, int seek)
  *
  *
  */
-static DmtxFollow
+DmtxFollow
 FollowSeekLoc(DmtxDecode *dec, DmtxPixelLoc loc)
 {
    DmtxFollow follow;
@@ -1004,7 +1004,7 @@ FollowSeekLoc(DmtxDecode *dec, DmtxPixelLoc loc)
  *
  *
  */
-static DmtxFollow
+DmtxFollow
 FollowStep(DmtxDecode *dec, DmtxRegion *reg, DmtxFollow followBeg, int sign)
 {
    int patternIdx;
@@ -1048,7 +1048,7 @@ FollowStep(DmtxDecode *dec, DmtxRegion *reg, DmtxFollow followBeg, int sign)
  *
  *
  */
-static DmtxFollow
+DmtxFollow
 FollowStep2(DmtxDecode *dec, DmtxFollow followBeg, int sign)
 {
    int patternIdx;
@@ -1077,7 +1077,7 @@ FollowStep2(DmtxDecode *dec, DmtxFollow followBeg, int sign)
  * 0x38 u = 3 bits points upstream 0-7
  * 0x07 d = 3 bits points downstream 0-7
  */
-static DmtxPassFail
+DmtxPassFail
 TrailBlazeContinuous(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin, int maxDiagonal)
 {
    int posAssigns, negAssigns, clears;
@@ -1177,7 +1177,7 @@ TrailBlazeContinuous(DmtxDecode *dec, DmtxRegion *reg, DmtxPointFlow flowBegin, 
  * ratcheting bresline inward or backward (although back + outward is allowed).
  *
  */
-static int
+int
 TrailBlazeGapped(DmtxDecode *dec, DmtxRegion *reg, DmtxBresLine line, int streamDir)
 {
    unsigned char *beforeCache, *afterCache;
@@ -1270,7 +1270,7 @@ TrailBlazeGapped(DmtxDecode *dec, DmtxRegion *reg, DmtxBresLine line, int stream
  *
  *
  */
-static int
+int
 TrailClear(DmtxDecode *dec, DmtxRegion *reg, int clearMask)
 {
    int clears;
@@ -1295,7 +1295,7 @@ TrailClear(DmtxDecode *dec, DmtxRegion *reg, int clearMask)
  *
  *
  */
-static DmtxBestLine
+DmtxBestLine
 FindBestSolidLine(DmtxDecode *dec, DmtxRegion *reg, int step0, int step1, int streamDir, int houghAvoid)
 {
    int hough[3][DMTX_HOUGH_RES] = { { 0 } };
@@ -1415,7 +1415,7 @@ FindBestSolidLine(DmtxDecode *dec, DmtxRegion *reg, int step0, int step1, int st
  *
  *
  */
-static DmtxBestLine
+DmtxBestLine
 FindBestSolidLine2(DmtxDecode *dec, DmtxPixelLoc loc0, int tripSteps, int sign, int houghAvoid)
 {
    int hough[3][DMTX_HOUGH_RES] = { { 0 } };
@@ -1503,7 +1503,7 @@ FindBestSolidLine2(DmtxDecode *dec, DmtxPixelLoc loc0, int tripSteps, int sign, 
  *
  *
  */
-static DmtxPassFail
+DmtxPassFail
 FindTravelLimits(DmtxDecode *dec, DmtxRegion *reg, DmtxBestLine *line)
 {
    int i;
@@ -1607,7 +1607,7 @@ FindTravelLimits(DmtxDecode *dec, DmtxRegion *reg, DmtxBestLine *line)
  *
  *
  */
-static DmtxPassFail
+DmtxPassFail
 MatrixRegionAlignCalibEdge(DmtxDecode *dec, DmtxRegion *reg, int edgeLoc)
 {
    int streamDir;
@@ -1686,7 +1686,7 @@ MatrixRegionAlignCalibEdge(DmtxDecode *dec, DmtxRegion *reg, int edgeLoc)
  *
  *
  */
-static DmtxBresLine
+DmtxBresLine
 BresLineInit(DmtxPixelLoc loc0, DmtxPixelLoc loc1, DmtxPixelLoc locInside)
 {
    int cp;
@@ -1754,7 +1754,7 @@ BresLineInit(DmtxPixelLoc loc0, DmtxPixelLoc loc1, DmtxPixelLoc locInside)
  *
  *
  */
-static DmtxPassFail
+DmtxPassFail
 BresLineGetStep(DmtxBresLine line, DmtxPixelLoc target, int *travel, int *outward)
 {
    /* Determine necessary step along and outward from Bresenham line */
@@ -1778,7 +1778,7 @@ BresLineGetStep(DmtxBresLine line, DmtxPixelLoc target, int *travel, int *outwar
  *
  *
  */
-static DmtxPassFail
+DmtxPassFail
 BresLineStep(DmtxBresLine *line, int travel, int outward)
 {
    int i;
@@ -1846,7 +1846,7 @@ BresLineStep(DmtxBresLine *line, int travel, int outward)
  *
  */
 #ifdef NOTDEFINED
-static void
+void
 WriteDiagnosticImage(DmtxDecode *dec, DmtxRegion *reg, char *imagePath)
 {
    int row, col;

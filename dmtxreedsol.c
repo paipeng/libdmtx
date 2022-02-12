@@ -91,7 +91,7 @@ static DmtxByte antilog301[] =
  */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFail; }
-static DmtxPassFail
+DmtxPassFail
 RsEncode(DmtxMessage *message, int sizeIdx)
 {
    int i, j;
@@ -152,7 +152,7 @@ RsEncode(DmtxMessage *message, int sizeIdx)
  */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFail; }
-static DmtxPassFail
+DmtxPassFail
 RsDecode(unsigned char *code, int sizeIdx, int fix)
 {
    int i;
@@ -258,7 +258,7 @@ RsDecode(unsigned char *code, int sizeIdx, int fix)
  */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFail; }
-static DmtxPassFail
+DmtxPassFail
 RsGenPoly(DmtxByteList *gen, int errorWordCount)
 {
    int i, j;
@@ -295,7 +295,7 @@ RsGenPoly(DmtxByteList *gen, int errorWordCount)
 /* XXX this CHKPASS isn't doing what we want ... really need a error reporting strategy */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxTrue; }
-static DmtxBoolean
+DmtxBoolean
 RsComputeSyndromes(DmtxByteList *syn, const DmtxByteList *rec, int blockErrorWords)
 {
    int i, j;
@@ -331,7 +331,7 @@ RsComputeSyndromes(DmtxByteList *syn, const DmtxByteList *rec, int blockErrorWor
 /* XXX this CHKPASS isn't doing what we want ... really need a error reporting strategy */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFalse; }
-static DmtxBoolean
+DmtxBoolean
 RsFindErrorLocatorPoly(DmtxByteList *elpOut, const DmtxByteList *syn, int errorWordCount, int maxCorrectable)
 {
    int i, iNext, j;
@@ -414,7 +414,7 @@ RsFindErrorLocatorPoly(DmtxByteList *elpOut, const DmtxByteList *syn, int errorW
  */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFalse; }
-static DmtxBoolean
+DmtxBoolean
 RsFindErrorLocations(DmtxByteList *loc, const DmtxByteList *elp)
 {
    int i, j;
@@ -459,7 +459,7 @@ RsFindErrorLocations(DmtxByteList *loc, const DmtxByteList *elp)
  */
 #undef CHKPASS
 #define CHKPASS { if(passFail == DmtxFail) return DmtxFail; }
-static DmtxPassFail
+DmtxPassFail
 RsRepairErrors(DmtxByteList *rec, const DmtxByteList *loc, const DmtxByteList *elp, const DmtxByteList *syn)
 {
    int i, j, q;

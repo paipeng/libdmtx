@@ -22,7 +22,7 @@
  *
  *
  */
-static void
+void
 EncodeNextChunkEdifact(DmtxEncodeStream *stream)
 {
    DmtxByte value;
@@ -54,7 +54,7 @@ EncodeNextChunkEdifact(DmtxEncodeStream *stream)
  *
  *
  */
-static void
+void
 AppendValueEdifact(DmtxEncodeStream *stream, DmtxByte value)
 {
    DmtxByte edifactValue, previousOutput;
@@ -114,7 +114,7 @@ AppendValueEdifact(DmtxEncodeStream *stream, DmtxByte value)
  *
  * If not matching any of the above, continue without doing anything.
  */
-static void
+void
 CompleteIfDoneEdifact(DmtxEncodeStream *stream, int sizeIdxRequest)
 {
    int i;
