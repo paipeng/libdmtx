@@ -58,7 +58,7 @@
  * internal functions can be static without losing the ability to access them
  * "externally" from the other source files in this list.
  */
-
+#if 0
 #include "dmtxencode.c"
 #include "dmtxencodestream.c"
 #include "dmtxencodescheme.c"
@@ -83,6 +83,7 @@
 #include "dmtxtime.c"
 #include "dmtxvector2.c"
 #include "dmtxmatrix3.c"
+#endif
 
 extern char *
 dmtxVersion(void)
