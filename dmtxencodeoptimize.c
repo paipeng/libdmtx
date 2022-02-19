@@ -87,8 +87,8 @@ EncodeOptimizeBest(DmtxByteList *input, DmtxByteList *output, int sizeIdxRequest
    DmtxPassFail passFail;
    DmtxEncodeStream streamsBest[SchemeStateCount];
    DmtxEncodeStream streamsTemp[SchemeStateCount];
-   DmtxByte outputsBestStorage[SchemeStateCount][1024];
-   DmtxByte outputsTempStorage[SchemeStateCount][1024];
+   DmtxByte outputsBestStorage[SchemeStateCount][4096];
+   DmtxByte outputsTempStorage[SchemeStateCount][4096];
    DmtxByte ctxTempStorage[4];
    DmtxByteList outputsBest[SchemeStateCount];
    DmtxByteList outputsTemp[SchemeStateCount];
