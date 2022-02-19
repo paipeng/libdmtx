@@ -13,6 +13,7 @@
  * \file dmtxencode.c
  * \brief Base encoding logic
  */
+#include "dmtx.h"
 
 #undef ISDIGIT
 #define ISDIGIT(n) (n > 47 && n < 58)

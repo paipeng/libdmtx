@@ -13,6 +13,7 @@
  * \file dmtxtime.c
  * \brief Time handling
  */
+#include "dmtx.h"
 
 #define DMTX_USEC_PER_SEC 1000000
 

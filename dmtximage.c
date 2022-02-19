@@ -13,6 +13,7 @@
  * \file dmtximage.c
  * \brief Image handling
  */
+#include "dmtx.h"
 
 /**
  * libdmtx stores image data as a large one-dimensional array of packed pixels,

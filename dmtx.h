@@ -22,6 +22,66 @@
 extern "C" {
 #endif
 
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <ctype.h>
+#include <limits.h>
+#include <float.h>
+#include <string.h>
+#include <errno.h>
+#include <assert.h>
+#include <math.h>
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#ifndef CALLBACK_POINT_PLOT
+#define CALLBACK_POINT_PLOT(a,b,c,d)
+#endif
+
+#ifndef CALLBACK_POINT_XFRM
+#define CALLBACK_POINT_XFRM(a,b,c,d)
+#endif
+
+#ifndef CALLBACK_MODULE
+#define CALLBACK_MODULE(a,b,c,d,e)
+#endif
+
+#ifndef CALLBACK_MATRIX
+#define CALLBACK_MATRIX(a)
+#endif
+
+#ifndef CALLBACK_FINAL
+#define CALLBACK_FINAL(a,b)
+#endif
+
+
+#undef ISDIGIT
+#define ISDIGIT(n) (n > 47 && n < 58)
+
+
+/* Verify stream is using expected scheme */
+#define CHKSCHEME(s) { \
+   if(stream->currentScheme != (s)) { StreamMarkFatal(stream, DmtxErrorUnexpectedScheme); return; } \
+}
+
+/* CHKERR should follow any call that might alter stream status */
+#define CHKERR { \
+   if(stream->status != DmtxStatusEncoding) { return; } \
+}
+
+/* CHKSIZE should follows typical calls to FindSymbolSize()  */
+#define CHKSIZE { \
+   if(sizeIdx == DmtxUndefined) { StreamMarkInvalid(stream, DmtxErrorUnknown); return; } \
+}
+
+
+
+
+
 /* Time headers required for DmtxTime struct below */
 #include <time.h>
 #ifdef HAVE_SYS_TIME_H
@@ -628,6 +688,42 @@ extern DmtxByte dmtxByteListPop(DmtxByteList *list, DmtxPassFail *passFail);
 extern void dmtxByteListPrint(DmtxByteList *list, char *prefix);
 
 extern char *dmtxVersion(void);
+
+
+
+/**
+ * @struct DmtxFollow
+ * @brief DmtxFollow
+ */
+typedef struct DmtxFollow_struct {
+   unsigned char  *ptr;
+   unsigned char   neighbor;
+   int             step;
+   DmtxPixelLoc    loc;
+} DmtxFollow;
+
+/**
+ * @struct DmtxBresLine
+ * @brief DmtxBresLine
+ */
+typedef struct DmtxBresLine_struct {
+   int             xStep;
+   int             yStep;
+   int             xDelta;
+   int             yDelta;
+   int             steep;
+   int             xOut;
+   int             yOut;
+   int             travel;
+   int             outward;
+   int             error;
+   DmtxPixelLoc    loc;
+   DmtxPixelLoc    loc0;
+   DmtxPixelLoc    loc1;
+} DmtxBresLine;
+
+#include "dmtxstatic.h"
+
 
 #ifdef __cplusplus
 }

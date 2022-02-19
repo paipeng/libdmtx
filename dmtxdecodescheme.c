@@ -14,6 +14,8 @@
  * \file dmtxdecodescheme.c
  */
 
+#include "dmtx.h"
+
 /**
  * \brief  Translate encoded data stream into final output
  * \param  msg

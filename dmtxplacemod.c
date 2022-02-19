@@ -13,7 +13,7 @@
  * \file dmtxplacemod.c
  * \brief Data Matrix module placement
  */
-
+#include "dmtx.h"
 /**
  * receives symbol row and col and returns status
  * DmtxModuleOn / !DmtxModuleOn (DmtxModuleOff)

@@ -17,6 +17,7 @@
 #ifndef __DMTXSTATIC_H__
 #define __DMTXSTATIC_H__
 
+
 #define DmtxAlmostZero          0.000001
 #define DmtxAlmostInfinity            -1
 
@@ -88,37 +89,6 @@ typedef enum {
    DmtxMaskBit2              = 0x01 << 6,
    DmtxMaskBit1              = 0x01 << 7
 } DmtxMaskBit;
-
-/**
- * @struct DmtxFollow
- * @brief DmtxFollow
- */
-typedef struct DmtxFollow_struct {
-   unsigned char  *ptr;
-   unsigned char   neighbor;
-   int             step;
-   DmtxPixelLoc    loc;
-} DmtxFollow;
-
-/**
- * @struct DmtxBresLine
- * @brief DmtxBresLine
- */
-typedef struct DmtxBresLine_struct {
-   int             xStep;
-   int             yStep;
-   int             xDelta;
-   int             yDelta;
-   int             steep;
-   int             xOut;
-   int             yOut;
-   int             travel;
-   int             outward;
-   int             error;
-   DmtxPixelLoc    loc;
-   DmtxPixelLoc    loc0;
-   DmtxPixelLoc    loc1;
-} DmtxBresLine;
 
 typedef struct C40TextState_struct {
    int             shift;
@@ -333,5 +303,6 @@ static char *dmtxErrorMessage[] = {
    "Encountered unexpected scheme",
    "Encountered incomplete value list"
 };
+
 
 #endif

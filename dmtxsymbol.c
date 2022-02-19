@@ -14,7 +14,7 @@
  * \file dmtxsymbol.c
  * \brief Data Matrix symbol attributes
  */
-
+#include "dmtx.h"
 
 /**
  * \brief  Retrieve symbol index from rows and columns

@@ -13,6 +13,8 @@
  * \file file.c
  */
 
+#include "dmtx.h"
+
 /**
  *
  *

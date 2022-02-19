@@ -14,6 +14,9 @@
  * \brief ASCII encoding rules
  */
 
+#include "dmtx.h"
+
+
 /**
  * Simple single scheme encoding uses "Normal"
  * The optimizer needs to track "Expanded" and "Compact" streams separately, so they

@@ -14,6 +14,8 @@
  * \brief C40/Text/X12 encoding rules
  */
 
+#include "dmtx.h"
+
 #undef CHKERR
 #define CHKERR { if(stream->status != DmtxStatusEncoding) { return; } }
 

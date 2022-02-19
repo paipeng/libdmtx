@@ -13,7 +13,7 @@
  * \file dmtxencodestream.c
  * \brief DmtxEncodeStream implementation
  */
-
+#include "dmtx.h"
 /**
  *
  *

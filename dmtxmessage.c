@@ -13,7 +13,7 @@
  * \file dmtxmessage.c
  * \brief Data message handling
  */
-
+#include "dmtx.h"
 /**
  * \brief  Allocate memory for message
  * \param  sizeIdx

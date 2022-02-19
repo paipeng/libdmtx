@@ -14,6 +14,7 @@
  * \brief Base 256 encoding rules
  */
 
+#include "dmtx.h"
 /**
  *
  *

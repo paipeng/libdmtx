@@ -14,7 +14,7 @@
  * \file dmtxregion.c
  * \brief Detect barcode regions
  */
-
+#include "dmtx.h"
 #define DMTX_HOUGH_RES 180
 
 /**

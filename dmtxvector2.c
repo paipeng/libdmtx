@@ -14,6 +14,7 @@
  * \brief 2D Vector math
  */
 
+#include "dmtx.h"
 /**
  *
  *

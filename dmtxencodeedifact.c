@@ -13,6 +13,20 @@
  * \file dmtxencodeedifact.c
  * \brief Edifact encoding rules
  */
+#include "dmtx.h"
+#define CHKSCHEME(s) { \
+   if(stream->currentScheme != (s)) { StreamMarkFatal(stream, DmtxErrorUnexpectedScheme); return; } \
+}
+
+/* CHKERR should follow any call that might alter stream status */
+#define CHKERR { \
+   if(stream->status != DmtxStatusEncoding) { return; } \
+}
+
+/* CHKSIZE should follows typical calls to FindSymbolSize()  */
+#define CHKSIZE { \
+   if(sizeIdx == DmtxUndefined) { StreamMarkInvalid(stream, DmtxErrorUnknown); return; } \
+}
 
 /**
  *

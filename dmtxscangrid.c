@@ -13,7 +13,7 @@
  * \file dmtxscangrid.c
  * \brief Scan grid tracking
  */
-
+#include "dmtx.h"
 /**
  * \brief  Initialize scan grid pattern
  * \param  dec

@@ -16,13 +16,16 @@
  * \brief Decode regions
  */
 
+#include "dmtx.h"
 /**
  * \brief  Initialize decode struct with default values
  * \param  img
  * \return Initialized DmtxDecode struct
  */
 
-#include <stdio.h> // for snprintf
+
+#include "dmtx.h"
+#include "dmtxstatic.h"
 
 extern DmtxDecode *
 dmtxDecodeCreate(DmtxImage *img, int scale)
@@ -503,7 +506,7 @@ dmtxDecodeCreateDiagnostic(DmtxDecode *dec, int *totalBytes, int *headerBytes, i
    height = dmtxDecodeGetProp(dec, DmtxPropHeight);
    channelCount = dmtxImageGetProp(dec->image, DmtxPropChannelCount);
 
-   style = 1; /* this doesn't mean anything yet */
+   //style = 1; /* this doesn't mean anything yet */
 
    /* Count width digits */
    for(widthDigits = 0, i = width; i > 0; i /= 10)

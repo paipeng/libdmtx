@@ -13,7 +13,7 @@
  * \file dmtxmatrix3.c
  * \brief 2D Matrix (3x3) math
  */
-
+#include "dmtx.h"
 /**
  * \brief  Copy matrix contents
  * \param  m0 Copy target
