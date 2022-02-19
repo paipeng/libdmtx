@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "73C2BC9927B779D200896E4F"
-               BuildableName = "liblibdmtxstatic.dylib"
+               BuildableName = "liblibdmtxstatic.a"
                BlueprintName = "libdmtxstatic"
                ReferencedContainer = "container:libdmtx.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "73C2BC9927B779D200896E4F"
-            BuildableName = "liblibdmtxstatic.dylib"
+            BuildableName = "liblibdmtxstatic.a"
             BlueprintName = "libdmtxstatic"
             ReferencedContainer = "container:libdmtx.xcodeproj">
          </BuildableReference>
